@@ -49,13 +49,23 @@ public class StackRA {
 		return str;
 	}
 
-	public int peak() {
+	public int peek() {
 		if (size > 0) {
 			return arr[size - 1];
 		}
 		else {
 			return -1;
 		}
+	}
+
+	public int max() {
+		int max = Integer.MIN_VALUE;
+		for (int i = 0; i < size; ++i) {
+			if (arr[i] > max) {
+				max = arr[i];
+			}
+		}
+		return max;
 	}
 
 	public static void main(String[] args) {
@@ -66,7 +76,8 @@ public class StackRA {
 		System.out.println(test);
 		test.pop();
 		System.out.println(test);
-		System.out.println(test.peak());
+		System.out.println(test.peek());
+		System.out.println(test.max());
 
 	}
 }
