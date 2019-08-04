@@ -19,18 +19,39 @@ public class StackRA {
 			copy(arr, newArr);
 			arr = newArr;
 		}
-		else if (size == arr.length / 4) {
+		else if (size <  arr.length / 4 && size > 1) {
 			int[] newArr = new int[arr.length / 2];
 			copy(arr, newArr);
 			arr = newArr;
 		}
 	}
 
-	public void add(int element) {
+	public void push(int element) {
 		resize();
-		arr[size++]
+		arr[size++] = element;
+	}
+
+	public void pop() {
+		resize();
+		--size;
+	}
+
+	public String toString() {
+		String str = "[";
+		for (int i = 0; i < size - 1; ++i) {
+			str += arr[i] + " ";
+		}
+		str += arr[size - 1] + "]";
+		return str;
 	}
 
 	public static void main(String[] args) {
+		StackRA test = new StackRA();
+		test.push(1);
+		test.push(2);
+		test.push(3);
+		System.out.println(test);
+		test.pop();
+		System.out.println(test);
 	}
 }
