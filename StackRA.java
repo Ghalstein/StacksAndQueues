@@ -1,7 +1,6 @@
 public class StackRA {
 
 	private int[] arr = new int[2]; 
-	private int last = arr[0];
 	private int size = 0;
 
 	// copires the old array to the new array
@@ -31,9 +30,14 @@ public class StackRA {
 		arr[size++] = element;
 	}
 
-	public void pop() {
+	public int pop() {
 		resize();
-		--size;
+		if (size > 0) {
+			return arr[--size];
+		}
+		else {
+			return -1;
+		}
 	}
 
 	public String toString() {
@@ -45,6 +49,25 @@ public class StackRA {
 		return str;
 	}
 
+	public int peek() {
+		if (size > 0) {
+			return arr[size - 1];
+		}
+		else {
+			return -1;
+		}
+	}
+
+	public int max() {
+		int max = Integer.MIN_VALUE;
+		for (int i = 0; i < size; ++i) {
+			if (arr[i] > max) {
+				max = arr[i];
+			}
+		}
+		return max;
+	}
+
 	public static void main(String[] args) {
 		StackRA test = new StackRA();
 		test.push(1);
@@ -53,5 +76,8 @@ public class StackRA {
 		System.out.println(test);
 		test.pop();
 		System.out.println(test);
+		System.out.println(test.peek());
+		System.out.println(test.max());
+
 	}
 }
