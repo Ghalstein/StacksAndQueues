@@ -45,11 +45,6 @@ public class StackRA {
 		return str;
 	}
 
-	// returns the highest value in the stack
-	public int max() {
-		
-	}
-
 	public static void main(String[] args) {
 		StackRA test = new StackRA();
 		test.push(1);
