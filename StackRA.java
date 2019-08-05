@@ -68,6 +68,15 @@ public class StackRA {
 		return max;
 	}
 
+	public boolean isEmpty() {
+		if (size > 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
 	public static void main(String[] args) {
 		StackRA test = new StackRA();
 		test.push(1);
