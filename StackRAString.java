@@ -1,4 +1,4 @@
-public class StackRA {
+public class StackRAString {
 
 	private String[] arr = new String[2]; 
 	private int size = 0;
@@ -25,7 +25,7 @@ public class StackRA {
 		}
 	}
 
-	public void push(int element) {
+	public void push(String element) {
 		resize();
 		arr[size++] = element;
 	}
@@ -36,7 +36,7 @@ public class StackRA {
 			return arr[--size];
 		}
 		else {
-			return -1;
+			return null;
 		}
 	}
 
@@ -54,7 +54,7 @@ public class StackRA {
 			return arr[size - 1];
 		}
 		else {
-			return -1;
+			return null;
 		}
 	}
 
