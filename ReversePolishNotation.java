@@ -33,8 +33,8 @@ public class ReversePolishNotation {
 	public static int calculate() {
 
 		while (!operators.isEmpty()) {
-			int val1 = operands.pop();
 			int val2 = operands.pop();
+			int val1 = operands.pop();
 			String op = operators.pop();
 			operands.push(evaluate(val1, val2, op));
 		}
@@ -47,6 +47,6 @@ public class ReversePolishNotation {
 	}	
 
 	public static void main(String[] args) {
-		System.out.println(setup("12+"));
+		System.out.println(setup("-42"));
 	}
 }
