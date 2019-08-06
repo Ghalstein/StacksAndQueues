@@ -14,8 +14,14 @@ public class Queue<T extends Comparable<T>> {
 		this.next = new Queue<T>(data, null);
 	}
 
+	public Queue<T> dequeue() {
+		Queue<T> oldHead = head;
+		head = head.next;
+		return oldHead;
+	}
+
 	public static void main(String[] args) {
-		
+
 	}
 
 }
