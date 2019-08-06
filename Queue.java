@@ -20,6 +20,10 @@ public class Queue<T extends Comparable<T>> {
 		return oldHead;
 	}
 
+	public toString() {
+		
+	}
+
 	public static void main(String[] args) {
 
 	}
