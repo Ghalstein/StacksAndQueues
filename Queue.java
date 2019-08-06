@@ -1,18 +1,18 @@
 public class Queue<T extends Comparable<T>> {
 
-	public Class<T> data;
+	public T data;
 	public Queue<T> next = null;
 	public Queue<T> head = null;
 	public Queue<T> tail = null;
 
-	public Queue(Class<T> data, Queue<T> next) {
+	public Queue(T data, Queue<T> next) {
 		this.data = data;
 		this.next = next;
 		this.head = this;
 		this.tail = this;
 	}
 
-	public void enqueue(Class<T> data) {
+	public void enqueue(T data) {
 		this.tail.next = new Queue<T>(data, null);
 		tail = tail.next;
 	}
@@ -28,13 +28,17 @@ public class Queue<T extends Comparable<T>> {
 		String str = "[";
 		while (curr != null) {
 			str += " " + curr.data;
+			curr = curr.next;
 		}
 		str += " ]";
 		return str;
 	}
 
 	public static void main(String[] args) {
- 
+ 		Queue<Integer> test = new Queue<>(1, null);
+ 		test.enqueue(2);
+ 		test.enqueue(3);
+ 		System.out.println(test);
 	}
 
 }
