@@ -19,11 +19,14 @@ public class Queue<T extends Comparable<T>> {
 		tail = tail.next;
 	}
 
-	public Queue<T> dequeue() {
-		Queue<T> oldHead = this.head;
-		this.head = this.head.next; 
-		oldHead.next = null;
-		return oldHead;
+	public T dequeue() {
+		if (this.head != null) {
+			Queue<T> oldHead = this.head;
+			this.head = this.head.next; 
+			oldHead.next = null;
+			return oldHead.data;
+		}
+		return null;
 	}
 
 	public String toString() {
