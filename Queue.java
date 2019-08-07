@@ -18,13 +18,14 @@ public class Queue<T extends Comparable<T>> {
 	}
 
 	public Queue<T> dequeue() {
-		Queue<T> oldHead = head;
-		head = head.next;
+		Queue<T> oldHead = this.head;
+		this.head = this.head.next; 
+		oldHead.next = null;
 		return oldHead;
 	}
 
 	public String toString() {
-		Queue<T> curr = this;
+		Queue<T> curr = this.head;
 		String str = "[";
 		while (curr != null) {
 			str += " " + curr.data;
@@ -38,6 +39,8 @@ public class Queue<T extends Comparable<T>> {
  		Queue<Integer> test = new Queue<>(1, null);
  		test.enqueue(2);
  		test.enqueue(3);
+ 		System.out.println(test);
+ 		test.dequeue();
  		System.out.println(test);
 	}
 
