@@ -9,12 +9,29 @@ public class CircularQueue<T extends Comparable<T>> {
 		this.arr = (T[]) new Comparable[capacity];
 	}
 
+	private void resize() {
+		if (size < arr.length / 4) {
+			T[] newArr = (T[]) new Comparable[arr.length / 2];
+			this.arr = newArr;
+		}
+		else if (size == arr.length) {
+			T[] newArr = (T[]) new Comparable[arr.length * 2];
+			this.arr = newArr;
+		}
+	}
+
 	public T dequeue() {
-		return arr[head++];
+		resize();
+		if (size > 0) {
+			--size;
+			return arr[head++];
+		}
 	}
 
 	public void enqueue(T data) {
+		resize();
 		arr[tail++] = data;
+		++size;
 	}
 
 	public String toString() {
@@ -23,6 +40,10 @@ public class CircularQueue<T extends Comparable<T>> {
 			str += this.arr[i] + " ";
 		}
 		return str + "]";
+	}
+
+	public int getSize() {
+		return size;
 	}
 
 	public static void main(String[] args) {
