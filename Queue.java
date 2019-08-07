@@ -50,14 +50,19 @@ public class Queue<T extends Comparable<T>> {
 		return max.data;
 	}
 
+	public T getFirst() {
+		return this.head.data;
+	}
+
 	public static void main(String[] args) {
  		Queue<Integer> test = new Queue<>(1, null);
  		test.enqueue(2);
  		test.enqueue(3);
- 		System.out.println(test.max());
- 		System.out.println(test);
- 		test.dequeue();
- 		System.out.println(test);
+ 		System.out.println("get first: " + test.getFirst());
+ 		System.out.println("max: " + test.max());
+ 		System.out.println("print of test: " + test);
+ 		System.out.println("return of dequeue: " + test.dequeue());
+ 		System.out.println("after dequeue: " + test);
 	}
 
 }
