@@ -60,14 +60,16 @@ public class CircularQueue<T extends Comparable<T>> {
 	}
 
 	public static void main(String[] args) {
-		CircularQueue<Integer> test = new CircularQueue<>(3);
+		CircularQueue<Integer> test = new CircularQueue<>(2);
 		test.enqueue(1);
 		test.enqueue(2);
 		test.enqueue(3);
 		test.enqueue(4);
+		System.out.println("Current size: " + test.getSize());
 		System.out.println("Initial: " + test);
 		test.dequeue();
 		System.out.println("After: " + test);
+		System.out.println("Current size: " + test.getSize());
 
 	}
 }
