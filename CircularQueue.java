@@ -12,21 +12,22 @@ public class CircularQueue<T extends Comparable<T>> {
 	private void copyArray(T[] oldArr, T[] newArr) {
 		int start = this.head;
 		int j = 0;
-		for (int i = start; i < tail - 1; ++i) {
+		for (int i = start; i < tail; ++i) {
 			newArr[j++] = oldArr[i];
 		}
 		this.head = 0;
-		newArr[j] = oldArr[tail];
 		this.tail = j;
 	}
 
 	private void resize() {
 		if (size < arr.length / 4) {
 			T[] newArr = (T[]) new Comparable[arr.length / 2];
+			copyArray(arr, newArr);
 			this.arr = newArr;
 		}
 		else if (size == arr.length || tail == arr.length - 1) {
 			T[] newArr = (T[]) new Comparable[arr.length * 2];
+			copyArray(arr, newArr);
 			this.arr = newArr;
 		}
 	}
@@ -59,7 +60,7 @@ public class CircularQueue<T extends Comparable<T>> {
 	}
 
 	public static void main(String[] args) {
-		CircularQueue<Integer> test = new CircularQueue<>(10);
+		CircularQueue<Integer> test = new CircularQueue<>(3);
 		test.enqueue(1);
 		test.enqueue(2);
 		test.enqueue(3);
