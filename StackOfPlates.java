@@ -28,6 +28,10 @@ public class StackOfPlates {
 		stacks.get(curr)[currIndex++] = value;
 	}
 
+	public String toString() {
+		return stacks.toString();
+	}
+
 	public static void main(String[] args) {
 		StackOfPlates stacks = new StackOfPlates();
 		stacks.push(1);
@@ -36,5 +40,6 @@ public class StackOfPlates {
 		stacks.push(4);
 		stacks.push(5);
 		stacks.push(6);
+		System.out.println(stacks);
 	}
 }
