@@ -36,6 +36,10 @@ public class StackMin {
 		return smallest;
 	}
 
+	public String toString() {
+		return this.arr.toString();
+	}
+
 
 	public static void main(String[] args) {
 		StackMin stack = new StackMin();
