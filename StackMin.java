@@ -10,11 +10,6 @@ public class StackMin {
 	private int min;
 	private ArrayList<Integer> arr = new ArrayList<>();
 
-	public StackMin(int value) {
-		this.min = value;
-		this.arr.add(value);
-	}
-
 	//push method
 	public void push(int value) {
 		this.arr.add(value);
@@ -43,6 +38,6 @@ public class StackMin {
 
 
 	public static void main(String[] args) {
-
+		StackMin stack = new StackMin();
 	}
 }
