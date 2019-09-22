@@ -7,13 +7,8 @@ import java.util.*;
 public class StackMin {
 
 	// min property and array property
-	private int min;
+	private int min = Integer.MAX_VALUE;
 	private ArrayList<Integer> arr = new ArrayList<>();
-
-	public StackMin(int value) {
-		this.min = value;
-		this.arr.add(value);
-	}
 
 	//push method
 	public void push(int value) {
@@ -41,8 +36,25 @@ public class StackMin {
 		return smallest;
 	}
 
+	public String toString() {
+		return this.arr.toString();
+	}
+
+	public int min() {
+		if (this.arr.size() == 0) return -1;
+		return this.min;
+	}
+
 
 	public static void main(String[] args) {
-
+		StackMin stack = new StackMin();
+		System.out.println(stack.min());
+		stack.push(1);
+		stack.push(2);
+		stack.push(3);
+		System.out.println(stack);
+		System.out.println(stack.min());
+		stack.push(0);
+		System.out.println(stack.min());
 	}
 }
