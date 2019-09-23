@@ -14,6 +14,11 @@ public class MyQueue {
 		addStack.push(value);
 	}
 
+	// pops by popping all of addStack on to removeStack
+	public int pop() {
+		while (addStack)
+	}
+
 	public static void main(String[] args) {
 
 	}
