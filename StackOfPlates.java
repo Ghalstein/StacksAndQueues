@@ -34,8 +34,7 @@ public class StackOfPlates {
 		int i = 0;
 		for (int current : this.stacks.get(stack)) {
 			if (current == 0) {
-				System.out.println("i" + i);
-				return i;
+				return i - 1;
 			}
 			i++;
 		}
@@ -73,7 +72,7 @@ public class StackOfPlates {
 		}
 		else {
 			int current = currIndex(stack);
-			if (current == 0) return -1;
+			if (current == -1) return -1;
 			else {
 				int popped = this.stacks.get(stack)[current];
 				this.stacks.get(stack)[current] = 0;
@@ -93,6 +92,11 @@ public class StackOfPlates {
 		stacks.push(7);
 		System.out.println(stacks);
 		System.out.println(stacks.pop());
+		System.out.println(stacks.pop());
+		System.out.println(stacks.pop());
+		System.out.println(stacks.pop());
+		System.out.println(stacks.pop());
+		System.out.println(stacks.popAt(0));
 		System.out.println(stacks);
 	}
 }
