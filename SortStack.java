@@ -9,10 +9,19 @@ public class SortStack {
 	private StackMin stack = new StackMin();
 	private StackMin tempStack = new StackMin();
 
+	// pops the smallest element off the stack
 	public int pop() {
 		if (stack.isEmpty()) return -1;
 		stack.pop();
 	}
+
+	// pushes the elements on so that it is sorted with smallest on top
+	public void push() {
+		while (!this.stack.isEmpty()) {
+			tempStack.push(stack.pop());
+		}
+	}
+
 	public static main(String[] args) {
 
 	}
