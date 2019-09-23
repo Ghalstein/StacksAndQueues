@@ -17,6 +17,7 @@ public class MyQueue {
 	// pops by popping all of addStack on to removeStack
 	public int pop() {
 		// readying removeStack to remove first element added
+		if (addStock.isEmpty()) return -1;
 		while (!addStack.isEmpty()) {
 			removeStock.push(addStack.pop());
 		}
@@ -35,6 +36,15 @@ public class MyQueue {
 	}
 
 	public static void main(String[] args) {
-		
+		MyQueue queue = new MyQueue();
+		queue.push(1);
+		queue.push(2);
+		queue.push(3);
+		queue.push(4);
+		queue.push(5);
+		System.out.println(queue);
+		queue.pop();
+		queue.pop();
+		System.out.println(queue);
 	}
 }
