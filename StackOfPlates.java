@@ -19,7 +19,7 @@ public class StackOfPlates {
 
 	// adds a new value to the stack at the end
 	public void push(int value) {
-		if (currIndex == stacks.get(curr).length - 1) {
+		if (currIndex == stacks.get(curr).length) {
 			int[] s = new int[5];
 			stacks.add(s);
 			++curr;
@@ -29,7 +29,11 @@ public class StackOfPlates {
 	}
 
 	public String toString() {
-		return stacks.toString();
+		String str = "";
+		for (int[] arr : this.stacks) {
+			str += Arrays.toString(arr);
+		}
+		return str;
 	}
 
 	public static void main(String[] args) {
