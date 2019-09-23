@@ -31,7 +31,14 @@ public class StackOfPlates {
 
 	// finds and setsthe currIndex for the new array after a pop
 	private void currIndex() {
-		this.currIndex = this.stacks.get(curr).length;
+		int i = 0;
+		for (int curr : this.stacks.get(curr)) {
+			if (curr == 0) {
+				this.currIndex = curr;
+				return;
+			}
+			i++;
+		}
 	}
 
 	// pops the element off the newest stack
@@ -42,7 +49,7 @@ public class StackOfPlates {
 			currIndex();
 			return pop();
 		}
-		int popped = this.stacks.get(curr).remove(this.currIndex);
+		int popped = this.stacks.get(curr)[this.currIndex] = 0;
 		return popped;
 	}
 
