@@ -46,8 +46,8 @@ public class StackMin {
 	}
 
 	public boolean isEmpty() {
-		if (this.arr.size() > 0) return true;
-		return false;
+		if (this.arr.size() > 0) return false;
+		return true;
 	}
 
 
