@@ -30,7 +30,11 @@ public class MyQueue {
 		return popped;
 	}
 
-	public static void main(String[] args) {
+	public String toString() {
+		return addStack.toString();
+	}
 
+	public static void main(String[] args) {
+		
 	}
 }
