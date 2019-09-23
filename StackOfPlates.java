@@ -28,6 +28,12 @@ public class StackOfPlates {
 		stacks.get(curr)[currIndex++] = value;
 	}
 
+	// pops the element off the newest stack
+	public int pop() {
+		if (currIndex == 0 && this.stacks.size() == 1) return -1;
+	}
+
+	// iterates through the arraylist and prints out each array
 	public String toString() {
 		String str = "";
 		for (int[] arr : this.stacks) {
