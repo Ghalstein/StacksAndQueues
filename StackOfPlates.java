@@ -30,17 +30,16 @@ public class StackOfPlates {
 
 
 	// finds and setsthe currIndex for the new array after a pop
-	private void currIndex() {
+	private int currIndex(int stack) {
 		int i = 0;
-		for (int current : this.stacks.get(this.curr)) {
+		for (int current : this.stacks.get(stack)) {
 			if (current == 0) {
 				System.out.println("i" + i);
-				this.currIndex = i;
-				return;
+				return i;
 			}
 			i++;
 		}
-		this.currIndex = stacks.get(curr).length - 1;
+		return stacks.get(stack).length - 1;
 	}
 
 	// pops the element off the newest stack
@@ -48,7 +47,7 @@ public class StackOfPlates {
 		if (this.currIndex == 0 && this.stacks.size() == 1) return -1;
 		if (this.currIndex == 0) {
 			this.stacks.remove(this.curr--);
-			currIndex();
+			this.currIndex = currIndex(this.curr);
 			int popped = this.stacks.get(curr)[this.currIndex];
 			this.stacks.get(curr)[this.currIndex] = 0;
 			return popped;
@@ -67,6 +66,22 @@ public class StackOfPlates {
 		return str;
 	}
 
+	// pops at a specified stack
+	public int popAt(int stack) {
+		if (stack == this.curr) {
+			return pop();
+		}
+		else {
+			int current = currIndex(stack);
+			if (current == 0) return -1;
+			else {
+				int popped = this.stacks.get(stack)[current];
+				this.stacks.get(stack)[current] = 0;
+				return popped;
+			}
+		}
+	}
+
 	public static void main(String[] args) {
 		StackOfPlates stacks = new StackOfPlates();
 		stacks.push(1);
@@ -77,9 +92,6 @@ public class StackOfPlates {
 		stacks.push(6);
 		stacks.push(7);
 		System.out.println(stacks);
-		System.out.println(stacks.pop());
-		System.out.println(stacks.pop());
-		System.out.println(stacks.pop());
 		System.out.println(stacks.pop());
 		System.out.println(stacks);
 	}
