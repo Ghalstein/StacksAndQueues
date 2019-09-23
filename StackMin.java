@@ -1,5 +1,5 @@
 /*
-have to 
+Its a stack with a minimum method
 */
 
 import java.util.*;
