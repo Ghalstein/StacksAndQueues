@@ -40,6 +40,11 @@ public class StackMin {
 		return this.arr.toString();
 	}
 
+	public int peek() {
+		if (this.arr.size() == 0) return -1;
+		return this.arr.get(this.arr.size() - 1);
+	}
+
 	public int min() {
 		if (this.arr.size() == 0) return -1;
 		return this.min;
