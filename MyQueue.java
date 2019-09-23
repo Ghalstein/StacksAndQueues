@@ -9,6 +9,11 @@ public class MyQueue {
 	private StackMin addStack = new StackMin();
 	private StackMin removeStack = new StackMin();
 
+	// pushing by adding to the add Stack
+	public void push(int value) {
+		addStack.push(value);
+	}
+
 	public static void main(String[] args) {
 
 	}
