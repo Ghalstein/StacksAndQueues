@@ -16,9 +16,17 @@ public class SortStack {
 	}
 
 	// pushes the elements on so that it is sorted with smallest on top
-	public void push() {
+	public void push(int value) {
 		while (!this.stack.isEmpty()) {
-			tempStack.push(stack.pop());
+			if (this.stack.peek() >= value) {
+				this.stack.push(value);
+				break;
+			}
+			this.tempStack.pop(this.stack.pop());
+		}
+
+		while (!this.tempStack.isEmpty()) {
+			this.stack.pop(this.tempStack.pop());
 		}
 	}
 
