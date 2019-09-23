@@ -43,8 +43,8 @@ public class MyQueue {
 		queue.push(4);
 		queue.push(5);
 		System.out.println(queue);
-		queue.pop();
-		queue.pop();
+		System.out.println(queue.pop());
+		System.out.println(queue.pop());
 		System.out.println(queue);
 	}
 }
