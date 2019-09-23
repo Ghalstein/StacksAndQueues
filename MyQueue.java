@@ -17,14 +17,14 @@ public class MyQueue {
 	// pops by popping all of addStack on to removeStack
 	public int pop() {
 		// readying removeStack to remove first element added
-		if (addStock.isEmpty()) return -1;
+		if (addStack.isEmpty()) return -1;
 		while (!addStack.isEmpty()) {
-			removeStock.push(addStack.pop());
+			removeStack.push(addStack.pop());
 		}
-		int popped = removeStock.pop();
+		int popped = removeStack.pop();
 
 		// adding all of the elements back to addStack
-		while(!removeStock.isEmpty()) {
+		while(!removeStack.isEmpty()) {
 			addStack.push(removeStack.pop());
 		}
 
