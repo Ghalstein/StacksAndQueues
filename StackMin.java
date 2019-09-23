@@ -45,6 +45,11 @@ public class StackMin {
 		return this.min;
 	}
 
+	public isEmpty() {
+		if (this.arr.size() > 0) return true;
+		return false;
+	}
+
 
 	public static void main(String[] args) {
 		StackMin stack = new StackMin();
