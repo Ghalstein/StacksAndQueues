@@ -27,15 +27,19 @@ public class AnimalShelter {
 
 	// pops whichever stack has the youngest
 	public int pop() {
+		// pops nothing if both empty
 		if (dogs.isEmpty() && cats.isEmpty()) {
 			return -1;
 		}
+		// pops the cat if dog is empty
 		if (dogs.isEmpty()) {
 			return cats.pop();
 		}
+		//pops the dog if cat is empty
 		else if (cats.isEmpty()){
 			return dogs.pop();
 		}
+		// compares the youngest to pop of cats and dogs if both empty
 		else if (cats.peek() < dogs.peek()) {
 			return cats.pop();
 		}
