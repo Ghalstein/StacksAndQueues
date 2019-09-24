@@ -43,6 +43,10 @@ public class SortStack {
 		return stack.isEmpty();
 	}
 
+	public int peek() {
+		return stack.peek();
+	}
+
 	public static void main(String[] args) {
 		SortStack sortedStack = new SortStack();
 
