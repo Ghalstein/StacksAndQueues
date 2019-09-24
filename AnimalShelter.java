@@ -24,6 +24,8 @@ public class AnimalShelter {
 		}
 	}
 
+
+	// pops whichever stack has the youngest
 	public int pop() {
 		if (dogs.isEmpty && cats.isEmpty) {
 			return -1;
@@ -31,9 +33,13 @@ public class AnimalShelter {
 		if (dogs.isEmpty()) {
 			return cats.pop();
 		}
-		else {
+		else if (cats.isEmpty()){
 			dogs.pop();
 		}
+		else if (cats.peek() < dogs.peek()) {
+			cats.pop();
+		}
+		else dogs.pop();
 	}
 
 	public static void main(String[] args) {
