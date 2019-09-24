@@ -25,6 +25,11 @@ public class AnimalShelter {
 	}
 
 	public static void main(String[] args) {
-
+		AnimalShelter shelter = new AnimalShelter();
+		shelter.push("DOG", 10);
+		shelter.push("CAT", 15);
+		shleter.push("BUNNY", 2);
+		System.out.println("dogs: " + this.dogs);
+		SYstem.out.println("cats: " + this.cats);
 	}
 }
