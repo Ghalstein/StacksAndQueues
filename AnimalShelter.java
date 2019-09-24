@@ -24,16 +24,22 @@ public class AnimalShelter {
 		}
 	}
 
+
+	// pops whichever stack has the youngest
 	public int pop() {
-		if (dogs.isEmpty && cats.isEmpty) {
+		if (dogs.isEmpty() && cats.isEmpty()) {
 			return -1;
 		}
 		if (dogs.isEmpty()) {
 			return cats.pop();
 		}
-		else {
-			dogs.pop();
+		else if (cats.isEmpty()){
+			return dogs.pop();
 		}
+		else if (cats.peek() < dogs.peek()) {
+			return cats.pop();
+		}
+		else return dogs.pop();
 	}
 
 	public static void main(String[] args) {
@@ -41,6 +47,9 @@ public class AnimalShelter {
 		shelter.push("DOG", 10);
 		shelter.push("CAT", 15);
 		shelter.push("BUNNY", 2);
+		System.out.println("dogs: " + shelter.dogs);
+		System.out.println("cats: " + shelter.cats);
+		System.out.println(shelter.pop());
 		System.out.println("dogs: " + shelter.dogs);
 		System.out.println("cats: " + shelter.cats);
 	}
