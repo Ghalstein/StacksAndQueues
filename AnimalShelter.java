@@ -8,8 +8,8 @@ very primitive skeleton that just takes age in as cat or dog
 public class AnimalShelter {
 
 	// two stacks one dog and one cat
-	SortStack dogs = new SortStack();
-	SortStack cats = new SortStack();
+	private SortStack dogs = new SortStack();
+	private SortStack cats = new SortStack();
 
 	// pops off oldest either cat or dog
 	public void push(String type, int age) {
@@ -28,8 +28,8 @@ public class AnimalShelter {
 		AnimalShelter shelter = new AnimalShelter();
 		shelter.push("DOG", 10);
 		shelter.push("CAT", 15);
-		shleter.push("BUNNY", 2);
-		System.out.println("dogs: " + this.dogs);
-		SYstem.out.println("cats: " + this.cats);
+		shelter.push("BUNNY", 2);
+		System.out.println("dogs: " + shelter.dogs);
+		System.out.println("cats: " + shelter.cats);
 	}
 }
