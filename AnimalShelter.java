@@ -46,13 +46,32 @@ public class AnimalShelter {
 		else return dogs.pop();
 	}
 
+	// pops based on what is specified
+	public int pop(String type) {
+		if (type.toLowerCase().equals("cat")) {
+			return cats.pop();
+		}
+		else if (type.toLowerCase().equals("dog")){
+			return dogs.pop();
+		}
+		else {
+			return -1;
+		}
+	}
+
+
+
 	public static void main(String[] args) {
 		AnimalShelter shelter = new AnimalShelter();
 		shelter.push("DOG", 10);
 		shelter.push("CAT", 15);
+		shelter.push("DOG", 7);
+		shelter.push("CAT", 5);
 		shelter.push("BUNNY", 2);
 		System.out.println("dogs: " + shelter.dogs);
 		System.out.println("cats: " + shelter.cats);
+		shelter.pop("CAT");
+		shelter.pop("CAT");
 		System.out.println(shelter.pop());
 		System.out.println("dogs: " + shelter.dogs);
 		System.out.println("cats: " + shelter.cats);
