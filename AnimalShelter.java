@@ -24,6 +24,18 @@ public class AnimalShelter {
 		}
 	}
 
+	public int pop() {
+		if (dogs.isEmpty && cats.isEmpty) {
+			return -1;
+		}
+		if (dogs.isEmpty()) {
+			return cats.pop();
+		}
+		else {
+			dogs.pop();
+		}
+	}
+
 	public static void main(String[] args) {
 		AnimalShelter shelter = new AnimalShelter();
 		shelter.push("DOG", 10);
