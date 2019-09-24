@@ -39,6 +39,10 @@ public class SortStack {
 		return stack.toString();
 	}
 
+	public boolean isEmpty() {
+		return stack.isEmpty();
+	}
+
 	public static void main(String[] args) {
 		SortStack sortedStack = new SortStack();
 
