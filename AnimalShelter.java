@@ -1,7 +1,8 @@
 /*
 first-in, first-out animal shelter
-can either adopt the "oldest" or specify whether they want a dog/cat and recieve
-the oldest of that type
+can either adopt the "youngest" or specify whether they want a dog/cat and recieve
+the youngest of that type
+very primitive skeleton that just takes age in as cat or dog
 */
 
 public class AnimalShelter {
@@ -10,7 +11,18 @@ public class AnimalShelter {
 	SortStack dogs = new SortStack();
 	SortStack cats = new SortStack();
 
-	
+	// pops off oldest either cat or dog
+	public void push(String type, int age) {
+		if (type.toLowerCase().equals("cat")) {
+			cats.push(age);
+		}
+		else if (type.toLowerCase().equals("dog")){
+			dogs.push(age);
+		}
+		else {
+			return;
+		}
+	}
 
 	public static void main(String[] args) {
 
